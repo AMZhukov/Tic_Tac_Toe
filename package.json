@@ -1,0 +1,29 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Graduation project courses Antida",
+  "main": "index.js",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-react": "^7.17.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AMZhukov/Tic_Tac_Toe.git"
+  },
+  "author": "Andrey Zhukov and Anton Elokhin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AMZhukov/Tic_Tac_Toe/issues"
+  },
+  "homepage": "https://github.com/AMZhukov/Tic_Tac_Toe#readme"
+}
