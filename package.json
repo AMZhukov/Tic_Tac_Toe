@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Graduation project courses Antida",
   "main": "./dist/bundle.js",
-    "scripts": {
+  "scripts": {
     "dev": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
     "prod": "webpack --mode=production --env production",
