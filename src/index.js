@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import { subscribeToTimer } from './api';
+
 function Square(props) {
     return (
             <button className="square" onClick = {props.onClick}>
@@ -53,7 +55,14 @@ class Game extends React.Component {
             xIsNext: true,
             stepNumber: 0,
         };
+        subscribeToTimer((err, timestamp) => this.setState({
+            timestamp
+        }));
     }
+
+    state = {
+        timestamp: 'no timestamp yet'
+    };
 
     handleClick(i) {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
@@ -93,6 +102,9 @@ class Game extends React.Component {
             return (
                 <li key={move}>
                     <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                    <p className="App-intro">
+                        This is the timer value: {this.state.timestamp}
+                    </p>
                 </li>
             );
         });
