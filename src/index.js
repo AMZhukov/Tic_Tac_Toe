@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import { subscribeToTimer } from './api';
+import { subscribeToTimer, sendCurrentStateAPI } from './api';
 
 function Square(props) {
     return (
@@ -72,6 +72,10 @@ class Game extends React.Component {
             return;
         }
         squares[i] = this.state.xIsNext ? "X" : "O";
+
+        sendCurrentState(i, squares[i]);
+
+
         this.setState({
             history: history.concat([
                 {
@@ -141,6 +145,10 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
+function sendCurrentState(numberSquare, currentStateSquare) {
+    // Тут надо описать передачу состояния соккета на сервер
+    sendCurrentStateAPI({numberSquare, currentStateSquare});
+}
 
 
 function calculateWinner(squares) {
