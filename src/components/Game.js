@@ -7,8 +7,11 @@ import TransitionsModal from './helloModal'
 
 import calculateWinner from './calculateWinner';
 
+import Modal from './Modal'
+
 import '../index.css';
 import 'animate.css';
+
 
 class Game extends React.Component {
     constructor(props) {
@@ -79,17 +82,15 @@ class Game extends React.Component {
         let status;
         if (winner) {
             status = 'Выиграл ' + winner;
-        } else {
+{/*             <WinModal name = winner />;
+ */}        } else {
             status = 'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O');
         }
 
         return (
 
             <div className="game">
-
-            <TransitionsModal />
-
-
+                <TransitionsModal />
                 <div className="game-board">
                     <Board
                         squares={current.squares}

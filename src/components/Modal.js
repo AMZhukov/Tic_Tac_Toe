@@ -4,9 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
-import BasicTextFields from './BasicTextFields';
-import SimpleSelect from './SimpleSelect'
-import ContainedButtons from './ContainedButtons'
+import WinPayload from './WinPayload'
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -22,9 +20,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function TransitionsModal(props) {
+export default function TransitionsModal() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -36,30 +34,25 @@ export default function TransitionsModal(props) {
 
   return (
     <div>
-{/*       <button type="button" onClick={handleOpen}>
+      <button type="button" onClick={handleOpen}>
         react-transition-group
-      </button> */}
+      </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={open}
-        
-        //onClose={handleClose}
-        
+        onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 250,
+          timeout: 500,
         }}
       >
         <Fade in={open}>
-            <div className={classes.paper}>
-                <h3>Привет!</h3>
-                <BasicTextFields />
-                <SimpleSelect />
-                <ContainedButtons text="В игру" onClick = {handleClose}/>
-            </div>
+          <div className={classes.paper}>
+            <WinPayload />
+          </div>
         </Fade>
       </Modal>
     </div>
