@@ -1,4 +1,45 @@
-import React from 'react'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
+
+export default function Square(props) {
+  const classes = useStyles();
+/* 
+    switch(props.value){
+        case X:
+            break;
+        case O:
+            break;
+        default:
+    }
+         */
+
+  return (
+    <div className={classes.root}> 
+      <Button variant="outlined" onClick = {props.onClick}>
+            {props.value}
+      </Button>
+{/*       <Button variant="outlined" color="primary">
+        Primary
+      </Button>
+      <Button variant="outlined" color="secondary">
+        Secondary
+      </Button>
+ */}
+     </div> 
+  );
+}
+
+
+/* import React from 'react'
 
 function Square(props) {
     return (
@@ -8,4 +49,4 @@ function Square(props) {
     );
 }
 
-export default Square;
+export default Square; */

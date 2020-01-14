@@ -3,13 +3,12 @@ import  subscribeToTimer from '../api';
 
 import Board from './Board'
 
+import TransitionsModal from './helloModal'
 
 import calculateWinner from './calculateWinner';
 
-
-
 import '../index.css';
-
+import 'animate.css';
 
 class Game extends React.Component {
     constructor(props) {
@@ -57,6 +56,7 @@ class Game extends React.Component {
     }
 
     render() {
+
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
@@ -84,7 +84,12 @@ class Game extends React.Component {
         }
 
         return (
+
             <div className="game">
+
+            <TransitionsModal />
+
+
                 <div className="game-board">
                     <Board
                         squares={current.squares}

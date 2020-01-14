@@ -13,8 +13,21 @@ class Board extends React.Component {
     }
 
     render() {
+/*         let areaSize = 9;
+        function gameArea(){
+            for(let i = 0; i>=areaSize; i++){
+                return(
+                    <button className="square" id="square${i}">
+                
+                    </button>
+                );
+            }
+        } */
+
         return (
+            
             <div>
+                
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
