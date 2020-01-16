@@ -22,10 +22,11 @@ export default function Square(props) {
     }
          */
 
+  
   return (
     <div className={classes.root}> 
-      <Button variant="outlined" onClick = {props.onClick}>
-            {props.value}
+      <Button className="game-button" style={{margin: 0}} variant="outlined" onClick = {props.onClick} >
+            {props.value ? props.value : <span dangerouslySetInnerHTML={{__html: '&nbsp'}}></span>} 
       </Button>
 {/*       <Button variant="outlined" color="primary">
         Primary

@@ -28,9 +28,9 @@ class Game extends React.Component {
         }));
     }
 
-    state = {
+/*     state = {
         timestamp: 'no timestamp yet'
-    };
+    }; */
 
     handleClick(i) {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
@@ -81,10 +81,10 @@ class Game extends React.Component {
 
         let status;
         if (winner) {
-            status = 'Выиграл ' + winner;
-{/*             <WinModal name = winner />;
- */}        } else {
-            status = 'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O');
+            status = <Modal name = {winner} open/>; /* 'Выиграл ' + winne */
+            
+        } else {
+            status = 'Сейчас ход: ' + (this.state.xIsNext ? 'X' : 'O');
         }
 
         return (
@@ -99,7 +99,8 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <ol>{moves}</ol>
+                    {/* <ol>{moves}</ol> */}
+                    <button onClick={()=>{window.location.reload();}}>Заново</button>
                 </div>
             </div>
         );

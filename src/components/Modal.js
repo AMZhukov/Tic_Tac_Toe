@@ -20,29 +20,28 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function TransitionsModal() {
+export default function TransitionsModal(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  /* const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
     setOpen(true);
   };
-
-  const handleClose = () => {
+   const handleClose = () => {
     setOpen(false);
-  };
+  }; */
+  const {open, name} = props;
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
+{/*       <button type="button" onClick={handleOpen}>
         react-transition-group
-      </button>
+      </button> */} 
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={open}
-        onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -51,7 +50,9 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <WinPayload />
+            
+            <WinPayload name={name}/>
+
           </div>
         </Fade>
       </Modal>
